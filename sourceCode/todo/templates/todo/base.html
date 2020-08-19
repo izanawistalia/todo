@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+</head>
+<body>
+    <div class="todo-wrapper">
+        <div class="header">
+            <h2 align="center"><span class="date"></span><br><span class="time"></span></h2>
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    const curr_date = document.querySelector('.date')
+    const curr_time = document.querySelector('.time')
+    let today = new Date()
+    var mo = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var da = ['Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday','Friday','Saturday'];
+    curr_date.textContent = today.getDate()+' '+mo[today.getMonth()]+' '+today.getFullYear();
+    setInterval(()=>{
+        let hr = today.getHours()
+        let min = today.getMinutes()
+        let sec = today.getSeconds()
+        let ampm = "am"
+        if(hr>=12){
+            hr = hr-12
+            ampm = "pm"
+        }
+        curr_time.textContent = hr+':'+min+':'+sec+' '+ampm;
+    }, 1000 );
+</script>
+</html>
+
+<!--window.addEventListener("DOMContentLoaded", settime);
+const hour = document.getElementById('h');
+const minute = document.getElementById('m');
+const second = document.getElementById('s');
+const day = document.getElementById('day');
+const date = document.getElementById('date');
+const month = document.getElementById('month');
+const year = document.getElementById('year');
+var mo = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var da = ['Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday','Friday','Saturday'];
+function settime(){
+
+    let d = new Date();
+    hour.innerHTML = d.getHours();
+    minute.innerHTML = d.getMinutes();
+    second.innerHTML = d.getSeconds();
+    date.innerHTML = d.getDate();
+    day.innerHTML = da[d.getDay()];
+    month.innerHTML = mo[d.getMonth()];
+    year.innerHTML = d.getFullYear();
+}
+
+setInterval(settime, 1000);-->

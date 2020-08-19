@@ -1,0 +1,10 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<form action="{% url 'delete' item.id %}" method="POST">
+    {% csrf_token %}
+    <div class="item">Are you sure you wanna delete this task</div> 
+    <div class="item">"{{ item }}" ?</div>
+    <input type="submit" name="YES" placeholder="YES" value="YES">
+    <a href="{% url 'index' %}"><h3 align="center">NO</h3></a>
+</form>
+{% endblock %}

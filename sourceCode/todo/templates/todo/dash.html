@@ -1,0 +1,7 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<div class="item">DONT'T HAVE AN ACCOUNT? CREATE ONE..</div>
+<a href="{% url 'registerUser' %}"><h3 align="center">register</h3></a>
+<div class="item">ALREADY HAVE AN ACCOUNT? LOG IN..</div>
+<a href="{% url 'loginUser' %}"><h3 align="center">login</h3></a>
+{% endblock %}

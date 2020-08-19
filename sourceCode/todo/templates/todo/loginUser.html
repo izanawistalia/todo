@@ -1,0 +1,16 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<div class="item">LOGIN</div>
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    <div class="item">  <input type="text" name="username" placeholder="Username..."> </div>
+    <div class="item">  <input type="password" name="password" placeholder="Password"> </div>
+    <br>
+    <input type="submit" name="submit" placeholder="register"><br><br>
+    {% for message in messages %}
+    <div class="item">{{ message }}</div>
+    {% endfor %}
+    <h6 align="center">don't have an account? <a href="{% url 'registerUser' %}">click here</a></h6>
+</form>
+{% endblock %}

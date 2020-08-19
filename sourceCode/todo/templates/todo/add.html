@@ -1,0 +1,16 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <!--<div class="item">Task : <input type="text" name='task'></div>
+    <div class="item">Date To Complete(yyyy-mm-dd hh:mm:ss) : <input type="datetime" name='date' placeholder="yyyy-mm-dd hh:mm:ss"></div>-->
+    <div class="item">Task : {{ form.item }}</div>
+    <div class="item">Date To Complete(yyyy-mm-dd hh:mm:ss) : {{ form.date_to_complete }}</div>
+    <div class="item">author: {{ form.author }}</div>
+    {% for message in messages %}
+    <div class="item">{{ message }}</div>
+    {% endfor %}
+    <input type="submit" name="submit" placeholder="ADD">
+</form>
+{% endblock %}
+<!---->

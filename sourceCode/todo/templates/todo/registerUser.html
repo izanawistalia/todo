@@ -1,0 +1,26 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<div class="item">REGISTER</div>
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    <!--<div class="item"> Username: {{ form.username }} </div>
+    <div class="item"> Email: {{ form.email }} </div>
+    <div class="item"> Password: {{ form.password }} </div>
+    <div class="item"> Password_Confirm: {{ form.password }} </div>-->
+    {% for field in form %}
+    <div class="item"> {{ field.label }}: {{ field }} </div>
+    {% endfor %}
+    <div class="item">username can be 150 characters or fewer. Letters, digits and @/./+/-/_ only.<br>
+        Your password can’t be too similar to your other personal information.
+        Your password must contain at least 8 characters.
+        Your password can’t be a commonly used password.
+        Your password can’t be entirely numeric.</div>
+    <br>
+    {% for message in messages %}
+    <div class="item">{{ message }}</div><br>
+    {% endfor %}
+    <input type="submit" name="submit" placeholder="register"><br><br>
+    <h6 align="center">alredy have an account? <a href="{% url 'loginUser' %}">click here</a></h6>
+</form>
+{% endblock %}

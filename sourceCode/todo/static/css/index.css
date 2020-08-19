@@ -1,0 +1,110 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background: radial-gradient(circle at 5% 5%, white, yellow, white);
+    height: 100vh;
+}
+.todo-wrapper{
+    position: relative;
+    top: 5em;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(pink, white);
+    width: 40%;
+    height: 65vh;
+    box-shadow: 1px 1px 10px white;
+}
+.todo-wrapper .header{
+    background-image: url(38.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40%;
+    width: 100%;
+    padding: 2em 1.5em 2em 1.5em;
+    color: whitesmoke;
+    text-shadow: 1px 1px grey;
+}
+.todo-wrapper .content{
+    padding: 10px;
+    height: 60%;
+    width: 100%;
+    overflow: auto;
+}
+.todo-wrapper .content a{
+    text-decoration: none;
+}
+/*.todo-wrapper .content a:hover{
+    transform: scale(1.1) translate(1%, 1%);
+}*/
+.todo-wrapper .content a h3{
+    width: 100%;
+    border: 1px solid pink;
+    box-shadow: inset 2px 2px 10px pink;
+    padding: 3px;
+    text-transform: uppercase;
+    background: pink;
+    color: rgb(163, 103, 113);
+    text-shadow: 1px 1px 10px rgb(219, 166, 175);
+    overflow-wrap: break-word;
+    margin-top: 5px;
+}
+.todo-wrapper .content input[type="submit"]{
+    -webkit-appearance: none;
+    width: 100%;
+    border: 1px solid pink;
+    box-shadow: inset 2px 2px 10px pink;
+    padding: 3px;
+    text-transform: uppercase;
+    background: pink;
+    color: rgb(163, 103, 113);
+    text-shadow: 1px 1px 10px rgb(219, 166, 175);
+    overflow-wrap: break-word;
+    cursor: pointer;
+}
+
+.todo-wrapper .content .item{
+    margin-top: 7px;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    box-shadow: inset 2px 2px 10px pink;
+    font-weight: lighter;
+    position: relative;
+}
+.todo-wrapper .content .item a:nth-child(1){
+    color: rgb(163, 103, 113);
+    text-shadow: 1px 1px 10px rgb(219, 166, 175);
+    position: absolute;
+    left: 0;
+    margin-left: 5px;
+    border-right: 1px solid pink;
+    box-shadow: 2px 2px 10px solid pink,
+                inset 2px 2px 10px solid pink;
+    padding: 0px 5px;
+}
+.todo-wrapper .content .item a:nth-child(2){
+    color: rgb(163, 103, 113);
+    text-shadow: 1px 1px 10px rgb(219, 166, 175);
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    padding: 0px 5px;
+    border-left: 1px solid pink;
+    box-shadow: 2px 2px 10px solid pink,
+                inset 2px 2px 10px solid pink;
+}
+.bg-red{
+    background: linear-gradient(right, red, white, red);
+}
+@media(max-width: 1100px){
+    .todo-wrapper{
+        left: 15%;
+        width: 70%;
+        height: 60vh;
+    }
+}
